@@ -21,10 +21,11 @@ function getAllDvds()
 function searchResults($searchResults)
 {
   global $db;
+  $searchParameters = '%' . $searchResults . '%';
   try {
-    $query = "SELECT * FROM dvds WHERE name LIKE :search";
+    $query = "SELECT * FROM dvds WHERE name LIKE  :search ";
     $stmt = $db->prepare($query);
-    $stmt->bindParam(':search', $searchResults);
+    $stmt->bindParam(':search', $searchParameters);
     $stmt->execute();
     return $stmt->fetchAll();
   } catch (\Exception $e) {
