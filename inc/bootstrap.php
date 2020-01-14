@@ -8,3 +8,4 @@ require_once __DIR__ . '/functions_dvd.php';
 require_once __DIR__ . '/functions_user.php';
 require_once __DIR__ . '/functions_vote.php';
 require_once __DIR__ . '/functions_auth.php';
+
