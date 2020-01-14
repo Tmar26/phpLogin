@@ -7,11 +7,9 @@ function getAllDvds()
   global $db;
 
   try {
-    $query = "SELECT dvds.*, COALESCE(votes.value,0) as score "
+    $query = "SELECT dvds.* "
       . " FROM dvds "
-      . " LEFT JOIN votes ON (dvds.id = votes.book_id) "
-      . " GROUP BY dvds.id "
-      . " ORDER BY score DESC";
+      . " ORDER BY name ASC";
     $stmt = $db->prepare($query);
     $stmt->execute();
     return $stmt->fetchAll();
@@ -34,6 +32,13 @@ function getDvd($id)
     throw $e;
   }
 }
+//function getSearchDvd($id){
+//  global $db;
+//
+//  try{
+//    $query="SELECT * FROM dvds WHERE "
+//  }
+//}
 
 //ADDED $image to addDvd
 function addDvd($title, $description, $ownerId = null, $target_file)
