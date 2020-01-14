@@ -18,6 +18,19 @@ function getAllDvds()
   }
 }
 
+function searchResults()
+{
+  global $db;
+  try {
+    $query = "SELECT * FROM dvds";
+    $stmt = $db->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll();
+  } catch (\Exception $e) {
+    throw $e;
+  }
+}
+
 function getDvd($id)
 {
   global $db;
@@ -32,13 +45,6 @@ function getDvd($id)
     throw $e;
   }
 }
-//function getSearchDvd($id){
-//  global $db;
-//
-//  try{
-//    $query="SELECT * FROM dvds WHERE "
-//  }
-//}
 
 //ADDED $image to addDvd
 function addDvd($title, $description, $ownerId = null, $target_file)
