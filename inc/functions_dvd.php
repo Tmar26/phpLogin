@@ -18,12 +18,13 @@ function getAllDvds()
   }
 }
 
-function searchResults()
+function searchResults($searchResults)
 {
   global $db;
   try {
-    $query = "SELECT * FROM dvds";
+    $query = "SELECT * FROM dvds WHERE name LIKE :search";
     $stmt = $db->prepare($query);
+    $stmt->bindParam(':search', $searchResults);
     $stmt->execute();
     return $stmt->fetchAll();
   } catch (\Exception $e) {
