@@ -17,8 +17,10 @@
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="dvds.php">DVD List</a></li>
+                <li><a href="ps3.php">PS3 Game List</a></li>
               <?php if (isAuthenticated()) : ?>
                   <li><a href="add.php">Add DVD</a></li>
+                  <li><a href="addPs3.php">Add PS3</a></li>
               <?php endif; ?>
             </ul>
             <ul class="nav navbar-nav navbar-right">
