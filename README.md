@@ -13,5 +13,6 @@
 ##### Changed:
 * book list changed to dvd list
 * file names to reflect dvd library instead of book library
-* 
-*
+
+##### To Add:
+* add PS3 games
