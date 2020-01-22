@@ -12,7 +12,7 @@
                   placeholder="Description of the dvd"><?php if (isset($dvdDescription)) echo $dvdDescription; ?></textarea>
     </div>
 </div>
-<!--NEED TO ADD FILE SELECTOR FOR PHOTO UPLOAD HERE-->
+
 <div class="form-group">
     <label for="photoUpload" class="col-sm-2 control-label">File Upload</label>
     <div class="col-sm-10">

@@ -68,16 +68,17 @@ function addDvd($title, $description, $ownerId = null, $target_file)
   }
 }
 
-function updateDvd($dvdId, $title, $description)
+function updateDvd($dvdId, $title, $description, $target_file)
 {
   global $db;
 
   try {
-    $query = "UPDATE dvds SET name=:name, description=:description WHERE id=:dvdId";
+    $query = "UPDATE dvds SET name=:name, description=:description,image=:image WHERE id=:dvdId";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':name', $title);
     $stmt->bindParam(':description', $description);
     $stmt->bindParam(':dvdId', $dvdId);
+    $stmt->bindParam(':image',$target_file);
     return $stmt->execute();
   } catch (\Exception $e) {
     throw $e;

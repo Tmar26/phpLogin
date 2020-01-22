@@ -16,5 +16,5 @@
 
 ##### To Add:
 * add PS3 games
-* need to fix edit photos
-* check that other edit fcts work
+* need to fix edit photos (working)
+* check that other edit fcts work (working)

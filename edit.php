@@ -13,7 +13,7 @@ $buttonText = 'Update Dvd';
         <div class="well">
             <h2>Update dvd</h2>
 
-            <form class="form-horizontal" method="post" action="procedures/editDvd.php">
+            <form class="form-horizontal" method="post" action="procedures/editDvd.php" enctype="multipart/form-data">
                 <input type="hidden" name="dvdId" value="<?php echo $dvd['id']; ?>"/>
               <?php include_once __DIR__ . '/templates/dvdForm.php'; ?>
             </form>
